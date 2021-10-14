@@ -1,6 +1,7 @@
 package com.vicnetto.springsecurity.student.controller;
 
 import com.vicnetto.springsecurity.student.model.Student;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,8 @@ public class StudentController {
     );
 
     @GetMapping(path = "/{id}")
-    public Student getStudents(@PathVariable Integer id) {
+    @PreAuthorize("hasRole('ROLE_STUDENT')")
+    public Student getStudent(@PathVariable Integer id) {
         return STUDENTS.stream()
                 .filter(student -> id.equals(student.getId()))
                 .findFirst()
