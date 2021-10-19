@@ -1,4 +1,4 @@
-package com.vicnetto.springsecurity.security;
+package com.vicnetto.springsecurity.security.config;
 
 public enum UserPermissions {
     STUDENT_READ("student:read"),

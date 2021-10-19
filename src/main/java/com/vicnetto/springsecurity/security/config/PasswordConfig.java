@@ -1,4 +1,4 @@
-package com.vicnetto.springsecurity.security;
+package com.vicnetto.springsecurity.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
